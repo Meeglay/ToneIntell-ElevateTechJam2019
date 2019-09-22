@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.textView.delegate = self;
 }
 
 
@@ -33,6 +35,34 @@
         // Pass any objects to the view controller here, like...
         vc.text = self.textView.text;
     }
+}
+
+-(BOOL)textViewShouldBeginEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    return YES;
+}
+
+
+- (BOOL)textViewShouldEndEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
+    [self.view endEditing:YES];
+    return YES;
+}
+
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    CGRect frame = self.analyzeButton.frame;
+    
+    // Assign new frame to your view
+    [self.analyzeButton setFrame:CGRectMake(frame.origin.x,400,frame.size.width,frame.size.height)]; //here taken -110 for example i.e. your view will be scrolled to -110. change its value according to your requirement.
+
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    [self.analyzeButton setFrame:CGRectMake(0,0,320,460)];
 }
 /*
 #pragma mark - Navigation
