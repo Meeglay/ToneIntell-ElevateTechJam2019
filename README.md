@@ -1,5 +1,7 @@
 # Internet of Things (IoT) and Connected Living – Technical Support
 
+![Image description](https://github.com/Meeglay/ToneIntell-ElevateTechJam2019/blob/master/ToneIntell-Icon.png)
+
 ## Statement
 Consumers are increasingly adopting new technologies and incorporating connected devices into their day to day lives. Rogers enables you to make more possible by providing integrated connected living solutions that are simple to use and attainable for every-day life.
 
