@@ -215,11 +215,13 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                    @"Main" bundle:[NSBundle mainBundle]];
     sentenceViewController *vc  = [storyboard instantiateViewControllerWithIdentifier:@"sentence"];    
-    
+    UIColor *redcolor = [UIColor colorWithRed:204/255.0 green:0 blue:0 alpha:1];;
+    vc.color = [UIColor colorWithRed:0 green:153/255.0 blue:0 alpha:1];
     vc.text = self.text;
     
     if (indexPath.row == 0) {
         vc.sentences = self.AngerSentences;
+        vc.color = redcolor;
     }
     
     if (indexPath.row == 1) {
@@ -228,6 +230,7 @@
     
     if (indexPath.row == 2) {
         vc.sentences = self.SadnessSentences;
+        vc.color = redcolor;
     }
     
     if (indexPath.row == 3) {
@@ -236,10 +239,12 @@
     
     if (indexPath.row == 4) {
         vc.sentences = self.FearSentences;
+        vc.color = redcolor;
     }
     
     if (indexPath.row == 5) {
         vc.sentences = self.TentativeSentences;
+        vc.color = redcolor;
     }
     
     if (indexPath.row == 6) {

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic) NSString *text;
 @property (nonatomic) NSMutableArray *sentences;
-
+@property (nonatomic) UIColor *color;
 @end
 
 NS_ASSUME_NONNULL_END

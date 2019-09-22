@@ -26,6 +26,10 @@
         // Get reference to the destination view controller
         AnalyzeViewController *vc = [segue destinationViewController];
         
+        if ([self.textView.text characterAtIndex:self.textView.text.length -1] != '.') {
+            self.textView.text = [self.textView.text stringByAppendingString:@"."];
+        }
+        
         // Pass any objects to the view controller here, like...
         vc.text = self.textView.text;
     }

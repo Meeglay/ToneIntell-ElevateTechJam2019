@@ -33,7 +33,7 @@
     for (NSString *sentence in self.sentences) {
         NSRange range = [self.text rangeOfString:sentence];
         [myMutableString addAttribute:NSForegroundColorAttributeName
-                     value:[UIColor redColor]
+                     value:self.color
                      range:range];
     }
     
